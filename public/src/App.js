@@ -20,6 +20,7 @@ import TopPlace from "./pages/TopPlace";
 import TourDetail from "./pages/TourDetail";
 import {useState,useEffect} from 'react'
 import HeaderLogout from "./components/home/HeaderLogout";
+import Trips from "./pages/Trips";
 
 function App() {
  
@@ -49,8 +50,9 @@ function App() {
      <Route path="/blogdetail" element={<BlogDetail/>}/>
      <Route path="/topplace" element={<TopPlace/>}/>
      <Route path="/tourdetail" element={<TourDetail/>}/>
+     <Route path="/Mytrips" element={<Trips/>}/>
      </Routes>
-     <Footer/>
+     {/* <Footer/> */}
      
      </BrowserRouter>
 

@@ -3,7 +3,7 @@ import {useFormik} from 'formik'
 import {bookingSchema} from "../../schemas"
 import '../../App.css'
 import {useDispatch,useSelector} from 'react-redux'
-import {getId, getInputValue} from '../../action/index'
+import {updateInputValue} from '../../action/index'
 import * as  Yup from 'yup'
 
 
@@ -30,12 +30,10 @@ const initialValues ={
     inlineCheckbox5:"",
     inlineRadio:""
 }
-function BookingForm() {
-  const selectionRange = {
-    startDate: new Date(),
-    endDate: new Date(),
-    key: 'selection',
-  }
+function UpdateForm(props) {
+    const myTrips= useSelector((state)=>state.getFieledValues)
+  
+    const updateTrips= useSelector((state)=>state.updateFieledValues)
 const dispatch = useDispatch();
  const {values,errors,touched,handleBlur,handleChange,handleSubmit}=  useFormik({
         initialValues : initialValues,
@@ -47,7 +45,7 @@ const dispatch = useDispatch();
      })
    
   return (  
-  <div className='form_Container'>
+  <div >
   <section className='booking_Part text-light' >
 <form onSubmit={handleSubmit}>
   <div className='check_Box'>
@@ -122,7 +120,8 @@ const dispatch = useDispatch();
 <p className='errors'>{errors.inlineRadio}</p>
 </div>
 <div className="form_btn my-3">    
-<button  className="btn_1 button1" type='submit' onClick={()=>{dispatch(getInputValue(values))}} >Get Quotes</button>
+<button  className="btn_1 button1" type='submit' onClick={()=>{dispatch(updateInputValue(values))
+     props.pro(false)} } >Udate</button>
 
 </div>
 </div>
@@ -132,4 +131,6 @@ const dispatch = useDispatch();
   )
 }
 
-export default BookingForm
+export default UpdateForm;
+
+

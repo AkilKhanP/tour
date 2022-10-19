@@ -11,7 +11,7 @@ import Conditions from "./Conditions";
 // import {useHistory} from 'react-router-dom'
 import * as Yup from "yup";
 import en from "../../localization/en";
-import {useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom";
 const initialValues = {
   email: "",
   password: "",

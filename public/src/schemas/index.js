@@ -3,7 +3,8 @@ import en from '../localization/en'
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
-
+  
+// let = inlineCheckbox
 // phone_number: Yup.string()
 //   .required("required")
 //   .matches(phoneRegExp, 'Phone number is not valid')
@@ -15,9 +16,10 @@ export const bookingSchema = Yup.object().shape({
     no_of_passenger:Yup.number().min(1).required("Enter no. of passenger"),
     from:Yup.string().min(4).max(25).required("Please enter your destination"),
     to:Yup.string().min(4).max(25).required("Please enter your destination"),
-    inlineCheckbox:Yup.boolean().oneOf([true],"please check the box").required("Please check the box"),
+    inlineCheckbox1:Yup.boolean().oneOf([true],"please check the box").required("Please check the box"),
+    
     inlineCheckbox5:Yup.boolean().oneOf([true],"Please accept travel ticket").required("Please accept travel ticket "),
-    inlineRadio:Yup.string().required("Please select transport mode"),
+    // inlineRadio:Yup.boolean().required().oneOf([0 , 1], 'Selecting the gender field is required'),
     lemail: Yup.string().email('Invalid email').required('Required'),
     lpassword: Yup
     .string().min(8).required("Required"),

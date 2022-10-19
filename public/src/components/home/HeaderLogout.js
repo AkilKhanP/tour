@@ -58,7 +58,7 @@ function HeaderLogout(props) {
                         {/* <a className="nav-link" href="index.html">
                           Home
                         </a> */}
-                        <Link className="nav-link" to='/' refr >Home</Link>
+                        <Link className="nav-link" to='/'  >Home</Link>
                       </li>
                       <li className="nav-item">
                         {/* <a className="nav-link" href="about.html">
@@ -140,7 +140,7 @@ function HeaderLogout(props) {
                           Contact
                         </a> */}
 
-                     <Link className="nav-link" to='/contact' >Trips</Link>
+                     <Link className="nav-link" to='/Mytrips' >Mytrips</Link>
                       </li>
                     </ul>
                   </div>
